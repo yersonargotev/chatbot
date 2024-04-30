@@ -1,16 +1,16 @@
 'use client'
 
-import { cn } from '@/lib/utils'
 import { ChatList } from '@/components/chat-list'
 import { ChatPanel } from '@/components/chat-panel'
 import { EmptyScreen } from '@/components/empty-screen'
-import { useLocalStorage } from '@/lib/hooks/use-local-storage'
-import { useEffect, useState } from 'react'
-import { useUIState, useAIState } from 'ai/rsc'
-import { Session } from '@/lib/types'
-import { usePathname, useRouter } from 'next/navigation'
 import { Message } from '@/lib/chat/actions'
+import { useLocalStorage } from '@/lib/hooks/use-local-storage'
 import { useScrollAnchor } from '@/lib/hooks/use-scroll-anchor'
+import { Session } from '@/lib/types'
+import { cn } from '@/lib/utils'
+import { useAIState, useUIState } from 'ai/rsc'
+import { usePathname, useRouter } from 'next/navigation'
+import { useEffect, useState } from 'react'
 import { toast } from 'sonner'
 
 export interface ChatProps extends React.ComponentProps<'div'> {

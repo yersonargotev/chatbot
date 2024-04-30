@@ -1,10 +1,10 @@
 'use client'
 
-import { useState, useRef, useEffect, useId } from 'react'
-import { scaleLinear } from 'd3-scale'
-import { subMonths, format } from 'date-fns'
-import { useResizeObserver } from 'usehooks-ts'
 import { useAIState } from 'ai/rsc'
+import { scaleLinear } from 'd3-scale'
+import { format, subMonths } from 'date-fns'
+import { useEffect, useId, useRef, useState } from 'react'
+import { useResizeObserver } from 'usehooks-ts'
 
 interface Stock {
   symbol: string

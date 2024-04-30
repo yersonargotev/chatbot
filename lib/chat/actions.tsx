@@ -3,38 +3,38 @@ import 'server-only'
 import {
   createAI,
   createStreamableUI,
-  getMutableAIState,
+  createStreamableValue,
   getAIState,
-  render,
-  createStreamableValue
+  getMutableAIState,
+  render
 } from 'ai/rsc'
 import OpenAI from 'openai'
 
 import {
-  spinner,
   BotCard,
   BotMessage,
-  SystemMessage,
+  Purchase,
   Stock,
-  Purchase
+  SystemMessage,
+  spinner
 } from '@/components/stocks'
 
-import { z } from 'zod'
-import { EventsSkeleton } from '@/components/stocks/events-skeleton'
+import { saveChat } from '@/app/actions'
+import { auth } from '@/auth'
 import { Events } from '@/components/stocks/events'
-import { StocksSkeleton } from '@/components/stocks/stocks-skeleton'
-import { Stocks } from '@/components/stocks/stocks'
+import { EventsSkeleton } from '@/components/stocks/events-skeleton'
+import { SpinnerMessage, UserMessage } from '@/components/stocks/message'
 import { StockSkeleton } from '@/components/stocks/stock-skeleton'
+import { Stocks } from '@/components/stocks/stocks'
+import { StocksSkeleton } from '@/components/stocks/stocks-skeleton'
+import { Chat } from '@/lib/types'
 import {
   formatNumber,
+  nanoid,
   runAsyncFnWithoutBlocking,
-  sleep,
-  nanoid
+  sleep
 } from '@/lib/utils'
-import { saveChat } from '@/app/actions'
-import { SpinnerMessage, UserMessage } from '@/components/stocks/message'
-import { Chat } from '@/lib/types'
-import { auth } from '@/auth'
+import { z } from 'zod'
 
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY || ''

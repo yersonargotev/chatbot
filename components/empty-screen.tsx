@@ -6,16 +6,20 @@ import { IconArrowRight } from '@/components/ui/icons'
 
 const exampleMessages = [
   {
-    heading: 'Explain technical concepts',
-    message: `What is a "serverless function"?`
+    heading: '¿Qué es programación orientada a objetos?',
+    message: '¿Qué es programación orientada a objetos?'
   },
   {
-    heading: 'Summarize an article',
-    message: 'Summarize the following article for a 2nd grader: \n'
+    heading: '¿Qué es una clase es programación orientada a objetos?',
+    message: '¿Qué es una clase es programación orientada a objetos?'
   },
   {
-    heading: 'Draft an email',
-    message: `Draft an email to my boss about the following: \n`
+    heading: '¿Qué es un objeto es programación orientada a objetos?',
+    message: '¿Qué es un objeto es programación orientada a objetos?'
+  },
+  {
+    heading: '¿Cuál es la diferencia entre una clase y un objeto?',
+    message: '¿Cuál es la diferencia entre una clase y un objeto?'
   }
 ]
 
@@ -24,28 +28,10 @@ export function EmptyScreen() {
     <div className="mx-auto max-w-2xl px-4">
       <div className="flex flex-col gap-2 rounded-lg border bg-background p-8">
         <h1 className="text-lg font-semibold">
-          Welcome to Next.js AI Chatbot!
+          Asistente de aprendizaje de programación orientada a objetos
         </h1>
         <p className="leading-normal text-muted-foreground">
-          This is an open source AI chatbot app template built with{' '}
-          <ExternalLink href="https://nextjs.org">Next.js</ExternalLink>, the{' '}
-          <ExternalLink href="https://sdk.vercel.ai">
-            Vercel AI SDK
-          </ExternalLink>
-          , and{' '}
-          <ExternalLink href="https://vercel.com/storage/kv">
-            Vercel KV
-          </ExternalLink>
-          .
-        </p>
-        <p className="leading-normal text-muted-foreground">
-          It uses{' '}
-          <ExternalLink href="https://vercel.com/blog/ai-sdk-3-generative-ui">
-            React Server Components
-          </ExternalLink>{' '}
-          to combine text with generative UI as output of the LLM. The UI state
-          is synced through the SDK so the model is aware of your interactions
-          as they happen.
+          Chatbot con Inteligencia Artificial para responder preguntas sobre programación.
         </p>
       </div>
     </div>

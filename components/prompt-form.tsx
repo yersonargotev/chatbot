@@ -5,8 +5,6 @@ import Textarea from 'react-textarea-autosize'
 
 import { useActions, useUIState } from 'ai/rsc'
 
-import { UserMessage } from './stocks/message'
-import { type AI } from '@/lib/chat/actions'
 import { Button } from '@/components/ui/button'
 import { IconArrowElbow, IconPlus } from '@/components/ui/icons'
 import {
@@ -14,9 +12,11 @@ import {
   TooltipContent,
   TooltipTrigger
 } from '@/components/ui/tooltip'
+import { type AI } from '@/lib/chat/actions'
 import { useEnterSubmit } from '@/lib/hooks/use-enter-submit'
 import { nanoid } from 'nanoid'
 import { useRouter } from 'next/navigation'
+import { UserMessage } from './stocks/message'
 
 export function PromptForm({
   input,
@@ -78,16 +78,16 @@ export function PromptForm({
               }}
             >
               <IconPlus />
-              <span className="sr-only">New Chat</span>
+              <span className="sr-only">Nuevo Chat</span>
             </Button>
           </TooltipTrigger>
-          <TooltipContent>New Chat</TooltipContent>
+          <TooltipContent>Nuevo Chat</TooltipContent>
         </Tooltip>
         <Textarea
           ref={inputRef}
           tabIndex={0}
           onKeyDown={onKeyDown}
-          placeholder="Send a message."
+          placeholder="Haz una pregunta..."
           className="min-h-[60px] w-full resize-none bg-transparent px-4 py-[1.3rem] focus-within:outline-none sm:text-sm"
           autoFocus
           spellCheck={false}
@@ -103,10 +103,10 @@ export function PromptForm({
             <TooltipTrigger asChild>
               <Button type="submit" size="icon" disabled={input === ''}>
                 <IconArrowElbow />
-                <span className="sr-only">Send message</span>
+                <span className="sr-only">Envia un mensaje</span>
               </Button>
             </TooltipTrigger>
-            <TooltipContent>Send message</TooltipContent>
+            <TooltipContent>Envia un mensaje</TooltipContent>
           </Tooltip>
         </div>
       </div>
