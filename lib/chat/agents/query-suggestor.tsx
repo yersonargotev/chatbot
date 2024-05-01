@@ -1,15 +1,15 @@
-import { createStreamableUI, createStreamableValue } from 'ai/rsc'
-import { ExperimentalMessage, experimental_streamObject } from 'ai'
-import { PartialRelated, relatedSchema } from '@/lib/schema/related'
-import { Section } from '@/components/section'
 import SearchRelated from '@/components/search-related'
-import { OpenAI } from '@ai-sdk/openai'
+import { Section } from '@/components/section'
+import { PartialRelated, relatedSchema } from '@/lib/schema/related'
+import { createOpenAI } from '@ai-sdk/openai'
+import { CoreMessage, streamObject } from 'ai'
+import { createStreamableUI, createStreamableValue } from 'ai/rsc'
 
 export async function querySuggestor(
   uiStream: ReturnType<typeof createStreamableUI>,
-  messages: ExperimentalMessage[]
+  messages: CoreMessage[]
 ) {
-  const openai = new OpenAI({
+  const openai = createOpenAI({
     baseUrl: process.env.OPENAI_API_BASE, // optional base URL for proxies etc.
     apiKey: process.env.OPENAI_API_KEY, // optional API key, default to env property OPENAI_API_KEY
     organization: '' // optional organization
@@ -21,7 +21,7 @@ export async function querySuggestor(
     </Section>
   )
 
-  await experimental_streamObject({
+  await streamObject({
     model: openai.chat(process.env.OPENAI_API_MODEL || 'gpt-4-turbo'),
     system: `As a professional web researcher, your task is to generate a set of three queries that explore the subject matter more deeply, building upon the initial query and the information uncovered in its search results.
 

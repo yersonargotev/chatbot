@@ -2,7 +2,7 @@ import { Section } from '@/components/section'
 import { BotMessage } from '@/components/stocks/message'
 import { createAnthropic } from '@ai-sdk/anthropic'
 import { createOpenAI } from '@ai-sdk/openai'
-import { CoreMessage, experimental_streamText } from 'ai'
+import { CoreMessage, streamText as experimental_streamText } from 'ai'
 import { createStreamableUI, createStreamableValue } from 'ai/rsc'
 
 export async function writer(

@@ -11,7 +11,7 @@ import { Input } from './ui/input'
 
 export function FollowupPanel() {
   const [input, setInput] = useState('')
-  const { submitUserMessage } = useActions<typeof AI>()
+  const { submitUserMessage } = useActions()
   const [, setMessages] = useUIState<typeof AI>()
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {

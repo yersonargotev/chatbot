@@ -13,8 +13,6 @@ import { BotMessage } from '@/components/stocks'
 
 import { saveChat } from '@/app/actions'
 import { auth } from '@/auth'
-import { FollowupPanel } from '@/components/followup-panel'
-import { Section } from '@/components/section'
 import { UserMessage } from '@/components/stocks/message'
 import { Spinner } from '@/components/ui/spinner'
 import { Chat } from '@/lib/types'
@@ -83,7 +81,10 @@ async function submitUserMessage(content: string, skip?: boolean) {
     let answer = ''
     let toolOutputs = []
     let errorOccurred = false
-    const streamText = createStreamableValue<string>()
+    const streamText:
+      | undefined
+      | ReturnType<typeof createStreamableValue<string>> =
+      createStreamableValue<string>('')
     uiStream.update(<Spinner />)
 
     // If useSpecificAPI is enabled, only function calls will be made
@@ -118,6 +119,7 @@ async function submitUserMessage(content: string, skip?: boolean) {
             }
           : msg
       ) as Message[]
+
       answer = await writer(
         uiStream,
         streamText,
@@ -130,13 +132,6 @@ async function submitUserMessage(content: string, skip?: boolean) {
     if (!errorOccurred) {
       // Generate related queries
       await querySuggestor(uiStream, messages as CoreMessage[])
-
-      // Add follow-up panel
-      uiStream.append(
-        <Section title="Continuar">
-          <FollowupPanel />
-        </Section>
-      )
     }
 
     isGenerating.done(false)

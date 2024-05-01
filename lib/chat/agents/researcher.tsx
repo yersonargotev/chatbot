@@ -8,7 +8,7 @@ import {
   CoreMessage,
   ToolCallPart,
   ToolResultPart,
-  experimental_streamText
+  streamText as experimental_streamText
 } from 'ai'
 import { createStreamableUI, createStreamableValue } from 'ai/rsc'
 import Exa from 'exa-js'
@@ -29,6 +29,7 @@ export async function researcher(
 
   let fullResponse = ''
   let hasError = false
+
   const answerSection = (
     <Section title="Respuesta">
       <BotMessage content={streamText.value} />
