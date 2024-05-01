@@ -9,11 +9,9 @@ import {
   getMutableAIState
 } from 'ai/rsc'
 
-import { BotMessage } from '@/components/stocks'
-
 import { saveChat } from '@/app/actions'
 import { auth } from '@/auth'
-import { UserMessage } from '@/components/stocks/message'
+import { BotMessage2, UserMessage } from '@/components/stocks/message'
 import { Spinner } from '@/components/ui/spinner'
 import { Chat } from '@/lib/types'
 import { nanoid } from '@/lib/utils'
@@ -234,7 +232,7 @@ export const getUIStateFromAIState = (aiState: Chat) => {
         message.role === 'user' ? (
           <UserMessage>{message.content}</UserMessage>
         ) : (
-          <BotMessage content={message.content} />
+          <BotMessage2 content={message.content} />
         )
     }))
 }
