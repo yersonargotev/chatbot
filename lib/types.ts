@@ -35,3 +35,15 @@ export interface User extends Record<string, any> {
   password: string
   salt: string
 }
+
+export type SearchResults = {
+  images: string[]
+  results: SearchResultItem[]
+  query: string
+}
+
+export type SearchResultItem = {
+  title: string
+  url: string
+  content: string
+}
