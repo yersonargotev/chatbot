@@ -1,8 +1,8 @@
 import { Separator } from '@/components/ui/separator'
 import { UIState } from '@/lib/chat/actions'
 import { Session } from '@/lib/types'
-import Link from 'next/link'
 import { ExclamationTriangleIcon } from '@radix-ui/react-icons'
+import Link from 'next/link'
 
 export interface ChatList {
   messages: UIState
@@ -25,15 +25,15 @@ export function ChatList({ messages, session, isShared }: ChatList) {
             </div>
             <div className="ml-4 flex-1 space-y-2 overflow-hidden px-1">
               <p className="text-muted-foreground leading-normal">
-                Please{' '}
+                Por favor{' '}
                 <Link href="/login" className="underline">
-                  log in
+                  inicia sesión
                 </Link>{' '}
-                or{' '}
+                o{' '}
                 <Link href="/signup" className="underline">
-                  sign up
+                  regístrate
                 </Link>{' '}
-                to save and revisit your chat history!
+                para guardar y revisar tu historial de chat!
               </p>
             </div>
           </div>

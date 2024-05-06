@@ -86,7 +86,7 @@ export const Copilot: React.FC<CopilotProps> = ({ inquiry }: CopilotProps) => {
     return (
       <Card className="p-4 w-full flex justify-between items-center">
         <div className="flex items-center space-x-2">
-          <Sparkles className="w-4 h-4" />
+          <Sparkles className="size-4" />
           <h5 className="text-muted-foreground text-xs truncate">
             {`error: ${error}`}
           </h5>
@@ -103,12 +103,12 @@ export const Copilot: React.FC<CopilotProps> = ({ inquiry }: CopilotProps) => {
     return (
       <Card className="p-3 md:p-4 w-full flex justify-between items-center">
         <div className="flex items-center space-x-2 flex-1 min-w-0">
-          <IconLogo className="w-4 h-4 flex-shrink-0" />
+          <IconLogo className="size-4 shrink-0" />
           <h5 className="text-muted-foreground text-xs truncate">
             {updatedQuery()}
           </h5>
         </div>
-        <Check size={16} className="text-green-500 w-4 h-4" />
+        <Check size={16} className="text-green-500 size-4" />
       </Card>
     )
   } else {
@@ -116,7 +116,7 @@ export const Copilot: React.FC<CopilotProps> = ({ inquiry }: CopilotProps) => {
       <Card className="p-4 rounded-lg w-full mx-auto">
         <div className="flex items-center mb-4">
           <IconLogo
-            className={cn('w-4 h-4 flex-shrink-0', { 'animate-spin': pending })}
+            className={cn('size-4 shrink-0', { 'animate-spin': pending })}
           />
           <p className="text-lg text-foreground text-semibold ml-2">
             {data?.question}
@@ -169,11 +169,11 @@ export const Copilot: React.FC<CopilotProps> = ({ inquiry }: CopilotProps) => {
               disabled={pending}
             >
               <FastForward size={16} className="mr-1" />
-              Skip
+              Saltar
             </Button>
             <Button type="submit" disabled={isButtonDisabled || pending}>
               <ArrowRight size={16} className="mr-1" />
-              Send
+              Enviar
             </Button>
           </div>
         </form>

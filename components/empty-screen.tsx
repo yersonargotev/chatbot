@@ -26,7 +26,7 @@ export function EmptyScreen() {
         </h1>
         <p className="leading-normal text-muted-foreground">
           Chatbot con Inteligencia Artificial para responder preguntas sobre
-          programación.
+          programación orientada a objetos.
         </p>
       </div>
     </div>

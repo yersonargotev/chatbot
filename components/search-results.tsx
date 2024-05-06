@@ -1,10 +1,10 @@
 'use client'
 
-import { useState } from 'react'
-import { AvatarImage, Avatar, AvatarFallback } from '@/components/ui/avatar'
-import { CardContent, Card } from '@/components/ui/card'
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { Button } from '@/components/ui/button'
+import { Card, CardContent } from '@/components/ui/card'
 import Link from 'next/link'
+import { useState } from 'react'
 
 export interface SearchResultsProps {
   results: { title: string; url: string; content: string }[]
@@ -30,7 +30,7 @@ export function SearchResults({ results }: SearchResultsProps) {
               <CardContent className="p-2">
                 <p className="text-xs line-clamp-2">{result.content}</p>
                 <div className="mt-2 flex items-center space-x-2">
-                  <Avatar className="h-4 w-4">
+                  <Avatar className="size-4">
                     <AvatarImage
                       src={`https://www.google.com/s2/favicons?domain=${
                         new URL(result.url).hostname
@@ -59,7 +59,7 @@ export function SearchResults({ results }: SearchResultsProps) {
                 className="text-muted-foreground"
                 onClick={handleViewMore}
               >
-                View {additionalResultsCount} more
+                Ver {additionalResultsCount} más
               </Button>
             </CardContent>
           </Card>

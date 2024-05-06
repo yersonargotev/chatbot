@@ -2,10 +2,10 @@ import * as React from 'react'
 
 import Link from 'next/link'
 
-import { cn } from '@/lib/utils'
 import { SidebarList } from '@/components/sidebar-list'
 import { buttonVariants } from '@/components/ui/button'
 import { IconPlus } from '@/components/ui/icons'
+import { cn } from '@/lib/utils'
 
 interface ChatHistoryProps {
   userId?: string
@@ -15,7 +15,7 @@ export async function ChatHistory({ userId }: ChatHistoryProps) {
   return (
     <div className="flex flex-col h-full">
       <div className="flex items-center justify-between p-4">
-        <h4 className="text-sm font-medium">Chat History</h4>
+        <h4 className="text-sm font-medium">Historial de Chat</h4>
       </div>
       <div className="mb-2 px-2">
         <Link
@@ -26,7 +26,7 @@ export async function ChatHistory({ userId }: ChatHistoryProps) {
           )}
         >
           <IconPlus className="-translate-x-2 stroke-2" />
-          New Chat
+          Nuevo Chat
         </Link>
       </div>
       <React.Suspense

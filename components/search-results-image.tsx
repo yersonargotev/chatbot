@@ -56,7 +56,9 @@ export const SearchResultsImageSection: React.FC<
   }, [api, selectedIndex])
 
   if (!images || images.length === 0) {
-    return <div className="text-muted-foreground">No images found</div>
+    return (
+      <div className="text-muted-foreground">No se encontraron imágenes</div>
+    )
   }
 
   return (
@@ -69,18 +71,18 @@ export const SearchResultsImageSection: React.FC<
               onClick={() => setSelectedIndex(index)}
             >
               <Card className="flex-1 h-full">
-                <CardContent className="p-2 h-full w-full">
+                <CardContent className="p-2 size-full">
                   {image ? (
                     <img
                       src={image}
-                      alt={`Image ${index + 1}`}
-                      className="h-full w-full object-cover"
+                      alt={`Imagen ${index + 1}`}
+                      className="size-full object-cover"
                       onError={e =>
                         (e.currentTarget.src = '/images/placeholder-image.png')
                       }
                     />
                   ) : (
-                    <div className="w-full h-full bg-muted animate-pulse" />
+                    <div className="size-full bg-muted animate-pulse" />
                   )}
                 </CardContent>
               </Card>
@@ -93,7 +95,7 @@ export const SearchResultsImageSection: React.FC<
           </DialogTrigger>
           <DialogContent className="sm:max-w-3xl max-h-[80vh] overflow-auto">
             <DialogHeader>
-              <DialogTitle>Search Images</DialogTitle>
+              <DialogTitle>Buscar imágenes</DialogTitle>
               <DialogDescription className="text-sm">{query}</DialogDescription>
             </DialogHeader>
             <div className="py-4">
@@ -107,7 +109,7 @@ export const SearchResultsImageSection: React.FC<
                       <div className="p-1 flex items-center justify-center h-full">
                         <img
                           src={img}
-                          alt={`Image ${idx + 1}`}
+                          alt={`Imagen ${idx + 1}`}
                           className="h-auto w-full object-contain max-h-[60vh]"
                           onError={e =>
                             (e.currentTarget.src =
@@ -119,16 +121,16 @@ export const SearchResultsImageSection: React.FC<
                   ))}
                 </CarouselContent>
                 <div className="absolute inset-8 flex items-center justify-between p-4">
-                  <CarouselPrevious className="w-10 h-10 rounded-full shadow focus:outline-none">
-                    <span className="sr-only">Previous</span>
+                  <CarouselPrevious className="size-10 rounded-full shadow focus:outline-none">
+                    <span className="sr-only">Anterior</span>
                   </CarouselPrevious>
-                  <CarouselNext className="w-10 h-10 rounded-full shadow focus:outline-none">
-                    <span className="sr-only">Next</span>
+                  <CarouselNext className="size-10 rounded-full shadow focus:outline-none">
+                    <span className="sr-only">Siguiente</span>
                   </CarouselNext>
                 </div>
               </Carousel>
               <div className="py-2 text-center text-sm text-muted-foreground">
-                {current} of {count}
+                {current} de {count}
               </div>
             </div>
           </DialogContent>

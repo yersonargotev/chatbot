@@ -1,10 +1,8 @@
 'use client'
 
-import * as React from 'react'
-
-import { useSidebar } from '@/lib/hooks/use-sidebar'
 import { Button } from '@/components/ui/button'
 import { IconSidebar } from '@/components/ui/icons'
+import { useSidebar } from '@/lib/hooks/use-sidebar'
 
 export function SidebarToggle() {
   const { toggleSidebar } = useSidebar()
@@ -18,7 +16,7 @@ export function SidebarToggle() {
       }}
     >
       <IconSidebar className="size-6" />
-      <span className="sr-only">Toggle Sidebar</span>
+      <span className="sr-only">Alternar barra lateral</span>
     </Button>
   )
 }
