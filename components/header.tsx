@@ -35,7 +35,7 @@ async function UserOrLogin() {
           <UserMenu user={session.user} />
         ) : (
           <Button variant="link" asChild className="-ml-2 text-base">
-            <Link href="/login">Login</Link>
+            <Link href="/login">Inicia sesión</Link>
           </Button>
         )}
       </div>
