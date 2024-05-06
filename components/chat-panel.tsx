@@ -36,19 +36,19 @@ export function ChatPanel({
 
   const exampleMessages = [
     {
-      heading: '¿Qué es programación orientada a objetos?',
+      heading: 'Concepto de programación orientada a objetos.',
       message: '¿Qué es programación orientada a objetos?'
     },
     {
-      heading: '¿Qué es una clase es programación orientada a objetos?',
-      message: '¿Qué es una clase es programación orientada a objetos?'
+      heading: 'Concepto de clase en programación orientada a objetos.',
+      message: '¿Qué es una clase en programación orientada a objetos?'
     },
     {
-      heading: '¿Qué es un objeto es programación orientada a objetos?',
-      message: '¿Qué es un objeto es programación orientada a objetos?'
+      heading: 'Concepto de objeto en programación orientada a objetos.',
+      message: '¿Qué es un objeto en programación orientada a objetos?'
     },
     {
-      heading: '¿Cuál es la diferencia entre una clase y un objeto?',
+      heading: 'Diferencia entre una clase y un objeto.',
       message: '¿Cuál es la diferencia entre una clase y un objeto?'
     }
   ]
